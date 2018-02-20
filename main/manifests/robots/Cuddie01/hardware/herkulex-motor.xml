@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD robotInterface 1.0//EN" "http://www.icub.org/DTD/robotInterfaceV1.0.dtd">
+
+ <!-- Initialization file for cfw002  motor contol for the head - 6 joints -->
+<devices robot="Cuddie01" build="1">
+  <device name="herkulex-motor" type="herkulexMotionControl">
+    
+    <group name="general">
+      <param name="Joints">  8 </param>
+      <param name="AxisMap"> 0 1 2 3 4 5 6 7</param>
+      <param name="Encoder"> 1 1 1 1 1 1 1 1</param>
+      <param name="RefSpeed"> 20 20 20 20 20 20 20 20</param>
+      <param name="MaxPos">  90   40   160.0  45.0   70.0   90.0    75.0   20.0</param>
+      <param name="MinPos">  -90  -30  -90.0  -75.0  -20.0  -160.0  -45.0  -70.0</param>    
+      <param name="HomePos"> 0.0  -10.0  0.0    -60.0  30.0   0.0     60.0   -30.0</param>
+      <param name="ParkPos"> 0.0   -20  0.0    -60.0  30.0   0.0     60.0   -30.0</param>
+      <!-- motors default interaction mode: stif (0), complient (1) --> 
+      <param name="InteractMode"> 1 1 1 1 1 1 1 1</param>
+      <param name="VelocityScale"> 0.3 </param>
+      <param name="verbose"> true </param>
+    </group>
+
+    <group name="hardware">
+      <param name="SerialDevice">  /dev/ttyUSB0 </param>
+      <param name="SerialBaudRate"> 115200 </param>
+      <param name="SerialReadTimeout">  100 </param>
+      <!-- low level serial read thread period (ms) -->
+      <param name="ReadPeriod"> 100 </param> 
+      <param name="ReadPriority"> 0 </param>
+      <param name="MotorIDs"> 5 10 4 3 2 6 7 8</param>
+      <param name="Kp"> 150 250 250 150 150 150 150 150</param>
+      <param name="Ki"> 500 700 700 500 500 500 500 500</param>
+      <param name="Kd"> 100 100 100 100 100 100 100 100</param>
+      <param name="SatOffset"> 150 250 250 150 150 150 150 150</param>
+      <param name="SatSlope">  150 1500 500 150 150 150 150 150 </param>
+    </group>
+
+  </device>
+</devices>
+

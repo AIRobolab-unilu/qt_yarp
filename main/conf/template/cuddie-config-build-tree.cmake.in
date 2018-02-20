@@ -1,0 +1,22 @@
+# Copyright: (C) 2010 RobotCub Consortium
+# Author: Lorenzo Natale
+# CopyPolicy: Released under the terms of the GNU GPL v2.0.
+
+if (NOT CUDDIE_FOUND)
+
+message(STATUS "Using Cuddie from build tree")
+
+include("@CMAKE_BINARY_DIR@/@EXPORT_INCLUDE_FILE@")
+include("@CMAKE_BINARY_DIR@/@EXPORT_CONFIG_FILE@")
+
+set(CUDDIE_LIBRARIES "@CUDDIE_TARGETS@" CACHE INTERNAL "List of Cuddie libraries")
+set(CUDDIE_MODULE_PATH "@CUDDIE_MODULE_PATH@" CACHE INTERNAL "Cuddie cmake scripts directory")
+set(CUDDIE_LINK_FLAGS "@CUDDIE_LINK_FLAGS@" CACHE INTERNAL "List of Cuddie linker options")
+set(CUDDIE_LINK_DIRECTORIES "@CUDDIE_LINK_DIRECTORIES@")
+
+# This is not ideal and should be removed. At the moment
+# only needed by OpenCV
+link_directories(${CUDDIE_LINK_DIRECTORIES})
+
+set (CUDDIE_FOUND TRUE)
+endif (NOT CUDDIE_FOUND)

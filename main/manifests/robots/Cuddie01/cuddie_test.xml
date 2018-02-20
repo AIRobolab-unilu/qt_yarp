@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD robotInterface 1.0//EN" "http://www.icub.org/DTD/robotInterfaceV1.0.dtd">
+
+<robot name="Cuddie01" build="1" portprefix="cuddie">
+
+    <!-- All joints -->	
+    <!--
+    <devices file="hardware/herkulex-drs-test.xml" />
+    <devices file="wrappers/motor-wrapper-test.xml" />
+    -->
+
+    <!-- CAMERA -->	
+    <devices file="camera/camera-opencv.xml" /> 
+
+   <!-- FACE VIEWER -->
+    
+    <devices robot="Cuddie01" build="1">
+        <device name="faceViewer" type="faceViewer">
+            <param name="period">  100 </param>
+            <param name="emotions-path">/home/odroid/robot/cuddie/main/data/emotions</param>
+            <param name="emotion-default"> normal </param>
+            <param name="width">  1280 </param>
+            <param name="height"> 720 </param>
+        </device>
+    </devices>
+   <!-- SPEECH-->
+    <devices robot="Cuddie01" build="1">
+        <device name="speech" type="speech">
+            <param name="pcm-device"> plughw:1,0 </param>
+            <param name="default-language"> en-US </param>
+            <param name="lingware-path"> /home/odroid/robot/cuddie/main/data/tts-lang </param>
+            <param name="speed">100</param>
+            <param name="pitch">180</param>
+        </device>
+    </devices>
+    <devices robot="Cuddie01" build="1">
+        <device name="actionManager" type="actionManager">
+            <param name="actions-path"> /home/odroid/robot/cuddie/main/data/actions </param>
+            <param name="stiff-mode"> false </param>
+            <param name="sim-frame-period"> 2.0 </param>
+        </device>
+    </devices>
+    
+</robot>
+

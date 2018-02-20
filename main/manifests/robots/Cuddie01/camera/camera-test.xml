@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD robotInterface 1.0//EN" "http://www.icub.org/DTD/robotInterfaceV1.0.dtd">
+
+ <!-- Initialization camera frame grabber using test grabber-->
+<devices robot="Cuddie01" build="1">
+  <device name="camera_test" type="grabber">
+    <param name="subdevice">   test_grabber </param>
+    <param name="name"> /cuddie/camera </param>
+    <param name="width">     320 </param>
+    <param name="height">    240 </param>
+    <param name="framerate"> 10  </param>
+  </device>
+</devices>
+
