@@ -11,7 +11,7 @@ $ sudo apt-get install libgles2-mesa-dev
 
 ## LICENSE
 
-Unless otherwise noted, qt_yarp is licensed under the LGPL license (see `LGPL.txt`).
+Unless otherwise noted, qt_yarp is licensed under the LGPL license (see `LICENSE.lgpl`).
 
 ## Contributors
 
